@@ -1,0 +1,111 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page isELIgnored="false"%>
+<!-- * * * * * * Header Search * * * * * *  -->
+<header class="header">
+	<div class="container">
+		<div class="header__inner">
+			<!-- Header logo -->
+			<a href="/Book-Web" class="header__logo"> <svg width="53"
+					height="53" viewBox="0 0 24 18" fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+              <path
+						d="M12.75 2.46034C13.731 1.51391 15.423 1.24331 17.418 1.42738C19.269 1.59771 21.1725 2.14578 22.5 2.65403V16.2845C21.123 15.8038 19.3395 15.334 17.5695 15.1719C15.9285 15.0194 14.1525 15.1183 12.75 15.8477V2.46034ZM12 1.21858C10.5225 0.0551221 8.3805 -0.117955 6.4305 0.0606166C4.1595 0.270782 1.8675 0.983694 0.4395 1.57847C0.308474 1.63305 0.197363 1.72099 0.119432 1.83182C0.0415 1.94264 3.98571e-05 2.07166 0 2.20348L0 17.3134C3.4743e-05 17.4283 0.0315557 17.5414 0.0916756 17.6422C0.151796 17.7431 0.238593 17.8285 0.344116 17.8907C0.44964 17.9529 0.570517 17.9899 0.695675 17.9982C0.820833 18.0065 0.946271 17.986 1.0605 17.9384C2.3835 17.3889 4.515 16.7282 6.5805 16.5373C8.694 16.3422 10.4655 16.6568 11.415 17.7419C11.4853 17.8222 11.5743 17.8869 11.6756 17.9314C11.7768 17.9759 11.8877 17.999 12 17.999C12.1123 17.999 12.2232 17.9759 12.3244 17.9314C12.4257 17.8869 12.5147 17.8222 12.585 17.7419C13.5345 16.6568 15.306 16.3422 17.418 16.5373C19.485 16.7282 21.618 17.3889 22.9395 17.9384C23.0537 17.986 23.1792 18.0065 23.3043 17.9982C23.4295 17.9899 23.5504 17.9529 23.6559 17.8907C23.7614 17.8285 23.8482 17.7431 23.9083 17.6422C23.9684 17.5414 24 17.4283 24 17.3134V2.20348C24 2.07166 23.9585 1.94264 23.8806 1.83182C23.8026 1.72099 23.6915 1.63305 23.5605 1.57847C22.1325 0.983694 19.8405 0.270782 17.5695 0.0606166C15.6195 -0.119329 13.4775 0.0551221 12 1.21858Z"
+						fill="#C92127" ;
+              />
+            </svg> <span class="header__sologan">BOOKFAIR</span>
+			</a>
+			<!-- Search form -->
+			<form action="" class="header__search-form">
+				<input type="text" class="header__search-input"
+					placeholder="Tìm kiếm sách mong muốn... " />
+				<!-- Button submit -->
+				<button type="submit" class="btn header__btn-search">
+					<i class="fa-regular fa-magnifying-glass"></i>
+				</button>
+				<!-- Button clear -->
+				<button type="reset" class="header__btn-clear">
+					<i class="fa-regular fa-xmark"></i>
+				</button>
+			</form>
+			<!-- Notification -->
+			<div class="header__notification">
+				<i class="fa-sharp fa-regular fa-bell header__icon"></i> <span
+					class="header__label">Thông Báo</span>
+			</div>
+			<!-- Cart -->
+			<div class="header__cart">
+				<i class="fa-regular fa-cart-shopping header__icon"></i> <span
+					class="header__label">Giỏ Hàng</span>
+			</div>
+			<!-- Account -->
+			<div class="header__account">
+				<i class="fa-regular fa-user header__icon"></i> <span
+					class="header__label">Tài Khoản</span>
+				<div class="header-account__login">
+					<c:if test="${not empty userobj}">
+						<a class="btn btn-outline-primary btn-lg" href="#!">${userobj.name}
+						</a>
+						<button class="btn btn-primary btn-lg" onclick="showSupport()">Đăng
+							xuất</button>
+					</c:if>
+
+					<c:if test="${empty userobj}">
+						<a class="btn btn-primary btn-lg" href="../login.jsp">Đăng
+							nhập</a>
+						<a class="btn btn-outline-primary btn-lg" href="../register.jsp">Đăng
+							ký</a>
+					</c:if>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<!-- Toast -->
+<div class="toast toast-overlay">
+	<div class="toast__inner">
+		<i class="fa-regular fa-xmark close-toast"></i>
+		<h3 class="toast__heading">Bạn có muốn đăng xuất ?</h3>
+		<div class="toast__btn">
+			<button class="btn btn-outline-primary btn-xs" id="btn-close-toast">Đóng</button>
+			<a href="../logout" class="btn btn-primary btn-xs">Đăng xuất</a>
+		</div>
+	</div>
+</div>
+
+<!-- * * * * * * Header Navigation * * * * * * -->
+<header class="header-menu">
+	<div class="container">
+		<div class="header-menu__inner">
+			<a href="./home.jsp" class="header-admin-home"> <i
+				class="fa-regular fa-house"></i> Home
+			</a>
+		</div>
+	</div>
+</header>
+
+<!-- Handel Toast -->
+<script>
+      const modal = document.querySelector('.toast-overlay');
+      const toastContainer = document.querySelector('.toast__inner');
+      const modalClose = document.querySelector('.close-toast');
+      const btnClose = document.querySelector('#btn-close-toast');
+      function showSupport() {
+        modal.classList.add('show');
+      }
+      function hideSupport() {
+        modal.classList.remove('show');
+      }
+      modalClose.addEventListener('click', hideSupport);
+      modal.addEventListener('click', hideSupport);
+      btnClose.addEventListener('click', hideSupport);
+      toastContainer.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+</script>
+
+
