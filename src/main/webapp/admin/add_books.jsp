@@ -16,7 +16,7 @@
 	</c:if>
 	<div class="bg-white">
 		<h1 class="section-heading section-gardient header-admin-heading">Xin
-			chào, Admin</h1>
+			chào, ${userobj.name}</h1>
 	</div>
 	<!-- Add Book -->
 	<section class="add-book">

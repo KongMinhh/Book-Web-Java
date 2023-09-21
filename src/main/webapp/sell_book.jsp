@@ -10,6 +10,9 @@
 <%@include file="all_component/allCss.jsp"%>
 </head>
 <body>
+	<c:if test="${empty userobj}">
+		<c:redirect url="login.jsp" />
+	</c:if>
 	<!-- * * * * * * Header Search * * * * * *  -->
 	<header class="header">
 		<div class="container">
@@ -124,8 +127,9 @@
 				<div class="add-book__inner col-lg-6 offset-lg-3">
 					<h1 class="section-heading section-gardient add__heading">Bán
 						Sách Cũ</h1>
-					<form action="" method="post" autocomplete="off"
+					<form action="add_old_book" method="post" autocomplete="off"
 						enctype="multipart/form-data">
+						<input type="hidden" value="${userobj.email}" name="user">
 						<!-- Name book -->
 						<div class="form-group">
 							<label for="name-book" class="form-label">Tên Sách</label> <input
@@ -153,7 +157,17 @@
 								src="./img/book-upload.png"> Chọn file
 							</label>
 						</div>
+						<!-- Message -->
+						<c:if test="${not empty succMsg}">
+							<p class="message message-success">${succMsg}</p>
+							<c:remove var="succMsg" scope="session" />
+						</c:if>
 
+						<c:if test="${not empty failedMsg}">
+							<p class="message message-error">${failedMsg}</p>
+							<c:remove var="failedMsg" scope="session" />
+						</c:if>
+						
 						<!-- Submit -->
 						<button class="btn btn-primary btn-xs" type="submit">Bán
 							Sách</button>

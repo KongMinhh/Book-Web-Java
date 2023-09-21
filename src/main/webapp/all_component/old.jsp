@@ -28,7 +28,8 @@
 						<a href="#!"> <img src="./book/<%=b.getPhotoName()%>"
 							alt="Book" />
 						</a>
-						<a href="./view_books.jsp?bid=<%=b.getBookId()%>" class="btn btn-gray btn-md btn-more">Xem Thêm</a>
+						<a href="./view_books.jsp?bid=<%=b.getBookId()%>"
+							class="btn btn-gray btn-md btn-more">Xem Thêm</a>
 						<%
 							if (b.getBookCategory().equals("Old")) {
 						%>
@@ -53,9 +54,10 @@
 							<i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>
 							<i class="fa-solid fa-star"></i>
 						</div>
-						<button class="btn btn-outline-primary btn-sm btn-book">
-							<i class="fa-regular fa-basket-shopping"></i> Chọn mua
-						</button>
+						<a href="view_books.jsp?bid=<%=b.getBookId()%>"
+							class="btn btn-outline-primary btn-sm btn-book"> <i
+							class="fa-regular fa-basket-shopping"></i> Chọn mua
+						</a>
 					</div>
 				</article>
 			</div>

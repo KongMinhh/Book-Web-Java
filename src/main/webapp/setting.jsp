@@ -11,6 +11,9 @@
 </head>
 <body>
 	<!-- * * * * * * Header Search * * * * * *  -->
+	<c:if test="${empty userobj}">
+		<c:redirect url="login.jsp"/>
+	</c:if>
 	<header class="header">
 		<div class="container">
 			<div class="header__inner">
@@ -119,7 +122,7 @@
 
 	<!-- Setting Car -->
 	<h2 class="section-heading section-gardient header-admin-heading">
-		Xin chào, Admin</h2>
+		Xin chào, ${userobj.name}</h2>
 	<section class="setting">
 		<div class="container">
 			<!-- Row 1 -->

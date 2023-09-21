@@ -58,9 +58,9 @@
 								<i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>
 								<i class="fa-solid fa-star"></i>
 							</div>
-							<button class="btn btn-outline-primary btn-sm btn-book">
+							<a href="view_books.jsp?bid=<%=b.getBookId() %>" class="btn btn-outline-primary btn-sm btn-book">
 								<i class="fa-regular fa-basket-shopping"></i> Chọn mua
-							</button>
+							</a>
 						</div>
 					</article>
 				</div>
