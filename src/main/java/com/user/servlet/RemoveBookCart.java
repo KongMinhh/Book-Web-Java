@@ -24,17 +24,18 @@ public class RemoveBookCart extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		int bid=Integer.parseInt(req.getParameter("bid"));
 		int uid=Integer.parseInt(req.getParameter("uid"));
+		int cid=Integer.parseInt(req.getParameter("cid"));
 		CartDAOImpl dao=new CartDAOImpl(DBConnect.getConn());
-		boolean f=dao.deleteBook(bid,uid);
+		boolean f=dao.deleteBook(bid,uid,cid);
 		HttpSession session=req.getSession();
 		
 		if(f)
 		{
-			session.setAttribute("succMsg", "Sản phẩm đã được xóa !");
+			session.setAttribute("succMsg", "Sách đã được xóa !");
 			resp.sendRedirect("checkout.jsp");
 		}
 		else {
-			session.setAttribute("failedMs", "Lỗi sản phẩm chưa được xóa !");
+			session.setAttribute("failedMs", "Lỗi sách chưa được xóa !");
 			resp.sendRedirect("checkout.jsp");
 		}
 	}

@@ -170,7 +170,7 @@
 										<td><%=c.getAuthor()%></td>
 										<td><%=c.getPrice()%></td>
 										<td><a
-											href="remove_book?bid=<%=c.getBid()%>&&uid=<%=c.getUserId()%>"
+											href="remove_book?bid=<%=c.getBid()%>&&uid=<%=c.getUserId()%>&&cid=<%=c.getCid() %>"
 											class="btn btn-primary btn-xs">Xóa</a></td>
 									</tr>
 									<%

@@ -1,3 +1,9 @@
+<%@page import="com.DB.DBConnect"%>
+<%@page import="com.entity.BookDtls"%>
+<%@page import="com.DB.DBConnect"%>
+<%@page import="java.util.List"%>
+<%@page import="com.DAO.BookDAOImpl"%>
+<%@page import="com.entity.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -6,14 +12,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Setting</title>
+<title>User: Old Book</title>
 <%@include file="all_component/allCss.jsp"%>
 </head>
 <body>
-	<!-- * * * * * * Header Search * * * * * *  -->
-	<c:if test="${empty userobj}">
-		<c:redirect url="login.jsp"/>
-	</c:if>
 	<header class="header">
 		<div class="container">
 			<div class="header__inner">
@@ -119,80 +121,53 @@
 			</div>
 		</div>
 	</header>
+	<!-- Main -->
+	<main>
 
-	<!-- Setting Car -->
-	<h2 class="section-heading section-gardient header-admin-heading">
-		Xin chào, ${userobj.name}</h2>
-	<section class="setting">
+	<section class="all-book">
 		<div class="container">
-			<!-- Row 1 -->
-			<div class="row">
-				<!-- Item 1 -->
-				<div class="col-lg-4">
-					<a href="./sell_book.jsp">
-						<article class="setting-item">
-							<i class="fa-solid fa-books"></i>
-							<p class="setting-title">Bán Sách Cũ</p>
-						</article>
-					</a>
-				</div>
-				<!-- Item 2 -->
-				<div class="col-lg-4">
-					<a href="./old_book.jsp">
-						<article class="setting-item">
-							<i class="fa-solid fa-address-card"></i>
-							<p class="setting-title">Sách Cũ</p>
-						</article>
-					</a>
-				</div>
-					<!-- Item 3 -->
-				<div class="col-lg-4">
-					<a href="./edit_profile.jsp">
-						<article class="setting-item">
-							<i class="fa-solid fa-address-card"></i>
-							<p class="setting-title">Hồ Sơ</p>
-						</article>
-					</a>
-				</div>
-			</div>
-			<!-- Row 2 -->
-			<div class="row mt-2">
-				<!-- Item 3 -->
-				<div class="col-lg-4">
-					<a href="./user_address.jsp">
-						<article class="setting-item">
-							<i class="fa-solid fa-location-dot"></i>
-							<p class="setting-title">Sửa Địa Chỉ</p>
-						</article>
-					</a>
-				</div>
-				<!-- Item 4 -->
-				<div class="col-lg-4">
-					<a href="./oder.jsp">
-						<article class="setting-item">
-							<i class="fa-solid fa-ballot-check"></i>
-							<p class="setting-title">Đơn Hàng Của Tôi</p>
-						</article>
-					</a>
-				</div>
-				<!-- Item 5 -->
-				<div class="col-lg-4">
-					<a href="./helpline.jsp">
-						<article class="setting-item">
-							<i class="fa-solid fa-square-question"></i>
-							<p class="setting-title">Trung tâm trợ giúp</p>
-						</article>
-					</a>
-				</div>
-			</div>
+			<c:if test="${not empty succMsg}">
+				<p class="message message-success text-align mt-2 ">${succMsg}</p>
+				<c:remove var="succMsg" scope="session" />
+			</c:if>
+			<table class="table-all-book">
+				<thead>
+					<tr>
+						<th>Tên Sách</th>
+						<th>Tên Tác Giá</th>
+						<th>Giá</th>
+						<th>Loại Sách</th>
+						<th>Sửa</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<%
+						User u = (User) session.getAttribute("userobj");
+						String email = u.getEmail();
+						BookDAOImpl dao = new BookDAOImpl(DBConnect.getConn());
+						List<BookDtls> list = dao.getBookByOld(email, "Old");
+						for (BookDtls b : list) {
+					%>
+					<!-- Row 1 -->
+					<tr>
+						<td><%=b.getBookName()%></td>
+						<td><%=b.getAuthor()%></td>
+						<td><%=b.getPrice()%></td>
+						<td><%=b.getBookCategory()%></td>
+						<td><a
+							href="delete_old_book?em=<%=email%>&&id=<%=b.getBookId()%>"
+							class="btn btn-primary btn-sm">Xóa</a></td>
+					</tr>
+					<%
+						}
+					%>
+				</tbody>
+			</table>
 		</div>
 	</section>
 
 
-	<!-- * * * * * * Main * * * * * * * *  -->
-	<main> </main>
-	<!-- * * * * Footer * * * -->
-	<%@include file="all_component/footer.jsp"%>
 	</main>
 </body>
 </html>
