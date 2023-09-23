@@ -21,14 +21,10 @@
 	out.println(conn);
 	%> --%>
 	<!-- * * * * Main * * * * * -->
-	<main> 
-	<!-- * * * * Recent * * * --> 
-	<%@include file="all_component/recent.jsp"%> 
-	<!-- * * * * New * * *  -->
-	<%@include file="all_component/new.jsp"%> 
-	<!-- * * * * Old * * *  -->
-	<%@include file="all_component/old.jsp"%> 
-	</main>
+	<main> <!-- * * * * Recent * * * --> <%@include
+		file="all_component/recent.jsp"%> <!-- * * * * New * * *  -->
+	<%@include file="all_component/new.jsp"%> <!-- * * * * Old * * *  -->
+	<%@include file="all_component/old.jsp"%> </main>
 	<!-- * * * * Footer * * * -->
 	<%@include file="all_component/footer.jsp"%>
 

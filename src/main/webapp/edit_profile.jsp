@@ -123,23 +123,36 @@
 		<div class="container">
 			<div class="row">
 				<div class="add-book__inner col-lg-6 offset-lg-3">
-					<h1 class="section-heading section-gardient add__heading">Sửa Thông Tin</h1>
-					<form action="" method="post" autocomplete="off"
-						enctype="multipart/form-data">
+					<h1 class="section-heading section-gardient add__heading">Sửa
+						Thông Tin</h1>
+					<!-- Message -->
+					<c:if test="${not empty failedMsg}">
+						<p class="message message-error">${failedMsg}</p>
+						<c:remove var="failedMsg" scope="session" />
+					</c:if>
+					<c:if test="${not empty succMsg}">
+						<p class="message message-success">${succMsg}</p>
+						<c:remove var="succMsg" scope="session" />
+					</c:if>
+					<form action="update_profile" method="post" autocomplete="off">
+						<input type="hidden" value="${userobj.id }" name="id">
 						<!-- Name  -->
 						<div class="form-group">
 							<label for="name" class="form-label">Tên </label> <input
-								type="text" id="name" name="name" class="form-input" />
+								type="text" id="name" name="fname" class="form-input"
+								value="${userobj.name}" />
 						</div>
 						<!-- Email -->
 						<div class="form-group">
 							<label for="email" class="form-label">Email</label> <input
-								type="text" id="email" name="email" class="form-input" />
+								type="text" id="email" name="email" class="form-input"
+								value="${userobj.email }" />
 						</div>
 						<!-- Phone -->
 						<div class="form-group">
 							<label for="phone" class="form-label">Số Điện Thoại</label> <input
-								type="text" id="phone" name="phone" class="form-input" />
+								type="text" id="phone" name="phone" class="form-input"
+								value="${userobj.phone }" />
 						</div>
 						<!-- Password -->
 						<div class="form-group">
