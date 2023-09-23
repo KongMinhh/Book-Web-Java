@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Link icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Base -->
+    <link rel="stylesheet" href="base.css" />
+  </head>
+  <body>
+    <div class="form-validation">
+      <h2 class="form-heading">Đăng Ký</h2>
+      <form action="" class="form-login" autocomplete="off">
+        <!-- User Name -->
+        <div class="form-group">
+          <label for="name" class="form-label">Tên Đăng Nhập</label>
+          <input
+            type="text"
+            id="name"
+            class="form-input"
+            placeholder="Trinh Dinh Dai"
+            autofocus
+            required
+          />
+          <p class="form-error"></p>
+        </div>
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input
+            id="email"
+            type="text"
+            class="form-input"
+            placeholder="daidepzai2002@gmail.com"
+            required
+          />
+          <p class="form-error"></p>
+        </div>
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password" class="form-label">Mật Khẩu</label>
+          <input
+            type="password"
+            id="password"
+            class="form-input"
+            placeholder="Nhập Mật Khẩu"
+            required
+          />
+          <p class="form-error"></p>
+        </div>
+        <!-- Confirm Password -->
+        <div class="form-group">
+          <label for="confirm-pass" class="form-label">Nhập Lại Mật Khẩu</label>
+          <input
+            type="password"
+            id="confirm-pass"
+            class="form-input"
+            placeholder="Nhập Lại Mật Khẩu"
+            required
+          />
+          <p class="form-error"></p>
+        </div>
+        <!-- Submit -->
+        <div class="form-submit">
+          <button type="submit" class="btn-submit">Đăng Ký</button>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script src="./handle.js"></script>
+</html>
