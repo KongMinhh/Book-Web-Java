@@ -170,7 +170,7 @@
 										<td><%=c.getAuthor()%></td>
 										<td><%=c.getPrice()%></td>
 										<td><a
-											href="remove_book?bid=<%=c.getBid()%>&&uid=<%=c.getUserId()%>&&cid=<%=c.getCid() %>"
+											href="remove_book?bid=<%=c.getBid()%>&&uid=<%=c.getUserId()%>&&cid=<%=c.getCid()%>"
 											class="btn btn-primary btn-xs">Xóa</a></td>
 									</tr>
 									<%
@@ -196,19 +196,20 @@
 					<div class="cart-view__wrap">
 						<div class="cart-view__order">
 							<h1 class="section-heading">Chi Tiết Đơn Đặt Hàng</h1>
-							<form action="" autocomplete="off">
+							<form action="order" method="post" autocomplete="off">
+								<input type="hidden" value="${userobj.id}" name="id">
 								<div class="form-group-horizontal">
 									<!-- User -->
 									<div class="form-group">
 										<label for="cart-user" class="form-label">Tên</label> <input
 											type="text" id="cart-user" class="form-input"
-											value="<%=u.getName()%>" readonly />
+											value="${userobj.name }" name="username" />
 									</div>
 									<!-- Email -->
 									<div class="form-group">
 										<label for="cart-email" class="form-label">Email</label> <input
 											type="text" id="cart-email" class="form-input"
-											value="<%=u.getEmail()%>" readonly />
+											value="${userobj.email }" name="email" />
 									</div>
 								</div>
 
@@ -217,12 +218,13 @@
 									<div class="form-group">
 										<label for="cart-phone" class="form-label">Số Điện
 											Thoại</label> <input type="text" id="cart-phone" class="form-input"
-											value="<%=u.getPhone()%>" readonly />
+											value="${userobj.phone }" name="phone" />
 									</div>
 									<!-- Address -->
 									<div class="form-group">
 										<label for="cart-address" class="form-label">Địa Chỉ</label> <input
-											type="text" id="cart-address" class="form-input" />
+											type="text" id="cart-address" class="form-input"
+											name="address" />
 									</div>
 								</div>
 
@@ -230,12 +232,14 @@
 									<!-- Landmark -->
 									<div class="form-group">
 										<label for="cart-landmark" class="form-label">Quận</label> <input
-											type="text" id="cart-landmark" class="form-input" />
+											type="text" id="cart-landmark" class="form-input"
+											name="landmark" />
 									</div>
 									<!-- City -->
 									<div class="form-group">
-										<label for="cart-address" class="form-label">Email</label> <input
-											type="text" id="cart-address" class="form-input" />
+										<label for="cart-address" class="form-label">Thành Phố</label>
+										<input type="text" id="cart-address" class="form-input"
+											name="city" />
 									</div>
 								</div>
 
@@ -243,27 +247,30 @@
 									<!-- State -->
 									<div class="form-group">
 										<label for="cart-state" class="form-label">Phường</label> <input
-											type="text" id="cart-state" class="form-input" />
+											type="text" id="cart-state" class="form-input" name="state" />
 									</div>
 									<!-- Code -->
 									<div class="form-group">
 										<label for="cart-code" class="form-label">Mã Bưu Điện
-										</label> <input type="text" id="cart-code" class="form-input" />
+										</label> <input type="text" id="cart-code" class="form-input"
+											name="pincode" />
 									</div>
 								</div>
 								<!-- Payment  -->
 								<div class="form-group">
 									<label for="cart-paymet" class="form-label">Phương thức
-										thanh toán</label> <select name="cart-payment" id="cart-payment">
-										<option>--- Chọn phương thức thanh toán ---</option>
-										<option value="">Thanh toán khi giao hàng</option>
+										thanh toán</label> <select id="cart-payment" name="payment">
+										<option value="noselect">--- Chọn phương thức thanh
+											toán ---</option>
+										<option value="COD">Thanh toán khi giao hàng</option>
 									</select>
 								</div>
 								<!-- Submit -->
 								<div class="form-group-submit">
 									<a href="./index.jsp" class="btn btn-outline-primary btn-xs">
-										Quay Lại </a> <a href="#!" class="btn btn-yellow btn-xs"> Đặt
-										Sách </a>
+										Quay Lại </a>
+									<button type="submit" class="btn btn-yellow btn-xs">
+										Đặt Sách</button>
 								</div>
 							</form>
 						</div>

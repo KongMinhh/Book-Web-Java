@@ -157,17 +157,8 @@
 			</div>
 			<!-- Row 2 -->
 			<div class="row mt-2">
-				<!-- Item 3 -->
-				<div class="col-lg-4">
-					<a href="./user_address.jsp">
-						<article class="setting-item">
-							<i class="fa-solid fa-location-dot"></i>
-							<p class="setting-title">Sửa Địa Chỉ</p>
-						</article>
-					</a>
-				</div>
 				<!-- Item 4 -->
-				<div class="col-lg-4">
+				<div class="col-lg-6">
 					<a href="./oder.jsp">
 						<article class="setting-item">
 							<i class="fa-solid fa-ballot-check"></i>
@@ -176,7 +167,7 @@
 					</a>
 				</div>
 				<!-- Item 5 -->
-				<div class="col-lg-4">
+				<div class="col-lg-6">
 					<a href="./helpline.jsp">
 						<article class="setting-item">
 							<i class="fa-solid fa-square-question"></i>
