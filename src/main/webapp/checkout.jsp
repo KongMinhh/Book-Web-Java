@@ -203,13 +203,13 @@
 									<div class="form-group">
 										<label for="cart-user" class="form-label">Tên</label> <input
 											type="text" id="cart-user" class="form-input"
-											value="${userobj.name }" name="username" />
+											value="${userobj.name }" name="username" required />
 									</div>
 									<!-- Email -->
 									<div class="form-group">
 										<label for="cart-email" class="form-label">Email</label> <input
 											type="text" id="cart-email" class="form-input"
-											value="${userobj.email }" name="email" />
+											value="${userobj.email }" name="email" required />
 									</div>
 								</div>
 
@@ -218,13 +218,13 @@
 									<div class="form-group">
 										<label for="cart-phone" class="form-label">Số Điện
 											Thoại</label> <input type="text" id="cart-phone" class="form-input"
-											value="${userobj.phone }" name="phone" />
+											value="${userobj.phone }" name="phone" required />
 									</div>
 									<!-- Address -->
 									<div class="form-group">
 										<label for="cart-address" class="form-label">Địa Chỉ</label> <input
 											type="text" id="cart-address" class="form-input"
-											name="address" />
+											name="address"  required/>
 									</div>
 								</div>
 
@@ -233,13 +233,13 @@
 									<div class="form-group">
 										<label for="cart-landmark" class="form-label">Quận</label> <input
 											type="text" id="cart-landmark" class="form-input"
-											name="landmark" />
+											name="landmark" required />
 									</div>
 									<!-- City -->
 									<div class="form-group">
 										<label for="cart-address" class="form-label">Thành Phố</label>
 										<input type="text" id="cart-address" class="form-input"
-											name="city" />
+											name="city" required />
 									</div>
 								</div>
 
@@ -247,19 +247,19 @@
 									<!-- State -->
 									<div class="form-group">
 										<label for="cart-state" class="form-label">Phường</label> <input
-											type="text" id="cart-state" class="form-input" name="state" />
+											type="text" id="cart-state" class="form-input" name="state"  required/>
 									</div>
 									<!-- Code -->
 									<div class="form-group">
 										<label for="cart-code" class="form-label">Mã Bưu Điện
 										</label> <input type="text" id="cart-code" class="form-input"
-											name="pincode" />
+											name="pincode" required />
 									</div>
 								</div>
 								<!-- Payment  -->
 								<div class="form-group">
 									<label for="cart-paymet" class="form-label">Phương thức
-										thanh toán</label> <select id="cart-payment" name="payment">
+										thanh toán</label> <select required id="cart-payment" name="payment">
 										<option value="noselect">--- Chọn phương thức thanh
 											toán ---</option>
 										<option value="COD">Thanh toán khi giao hàng</option>

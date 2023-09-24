@@ -125,10 +125,9 @@
 						<i class="fa-solid fa-circle-check"></i>
 						<h1 class="confirmed__heading">Thank You !</h1>
 						<h2 class="confirmed__title">Đặt Hàng Thành Công !</h2>
-						<p class="confirmed__deli">Chúng tôi sẽ liên hệ với bạn ngay
 							sau khi nhận được đơn đặt hàng này</p>
 						<div class="confirmed__cta">
-							<a href="index.jsp" class="btn">Home</a> <a href="user_order.jsp"
+							<a href="index.jsp" class="btn">Home</a> <a href="order.jsp"
 								class="btn btn-primary">Xem Đơn Hàng</a>
 						</div>
 					</div>

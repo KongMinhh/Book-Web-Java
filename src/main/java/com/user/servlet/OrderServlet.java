@@ -50,36 +50,42 @@ public class OrderServlet extends HttpServlet {
 			CartDAOImpl dao = new CartDAOImpl(DBConnect.getConn());
 
 			List<Cart> blist = dao.getBooKByUser(id);
-			BookOrderImpl dao2 = new BookOrderImpl(DBConnect.getConn());
-
-			Book_Order o = null;
-
-			ArrayList<Book_Order> orderList = new ArrayList<Book_Order>();
-			Random r = new Random();
-			for (Cart c : blist) {
-				o = new Book_Order();
-				o.setOrderId("BOOK-ORD-00" + r.nextInt(1000));
-				o.setUserName(name);
-				o.setEmail(email);
-				o.setPhone(phno);
-				o.setFulladd(fullAdd);
-				o.setBookName(c.getBookName());
-				o.setAuthor(c.getAuthor());
-				o.setPrice(c.getPrice() + "");
-				o.setPaymentType(paymentType);
-				orderList.add(o);
-			}
-
-			if ("noselect".equals(paymentType)) {
-				session.setAttribute("failedMsg", "Chọn Phương Thức Thanh Toán !");
+			if (blist.isEmpty()) {
+				session.setAttribute("failed", "Lỗi cho sách vào giỏ hàng !");
 				resp.sendRedirect("checkout.jsp");
 			} else {
-				boolean f = dao2.saveOrder(orderList);
-				if (f) {
-					resp.sendRedirect("order_success.jsp");
-				} else {
-					session.setAttribute("failedMsg", " Lỗi Đơn Hàng Chưa Đặt Thành Công !");
+				BookOrderImpl dao2 = new BookOrderImpl(DBConnect.getConn());
+
+				Book_Order o = null;
+
+				ArrayList<Book_Order> orderList = new ArrayList<Book_Order>();
+				Random r = new Random();
+				for (Cart c : blist) {
+					o = new Book_Order();
+					o.setOrderId("BOOK-ORD-00" + r.nextInt(1000));
+					o.setUserName(name);
+					o.setEmail(email);
+					o.setPhone(phno);
+					o.setFulladd(fullAdd);
+					o.setBookName(c.getBookName());
+					o.setAuthor(c.getAuthor());
+					o.setPrice(c.getPrice() + "");
+					o.setPaymentType(paymentType);
+					orderList.add(o);
+				}
+
+				if ("noselect".equals(paymentType)) {
+					session.setAttribute("failedMsg", "Chọn Phương Thức Thanh Toán !");
 					resp.sendRedirect("checkout.jsp");
+				} else {
+					boolean f = dao2.saveOrder(orderList);
+					if (f) {
+						resp.sendRedirect("order_success.jsp");
+					} else {
+						session.setAttribute("failedMsg", " Lỗi Đơn Hàng Chưa Đặt Thành Công !");
+						resp.sendRedirect("checkout.jsp");
+					}
+
 				}
 
 			}

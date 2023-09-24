@@ -159,7 +159,7 @@
 			<div class="row mt-2">
 				<!-- Item 4 -->
 				<div class="col-lg-6">
-					<a href="./oder.jsp">
+					<a href="./order.jsp">
 						<article class="setting-item">
 							<i class="fa-solid fa-ballot-check"></i>
 							<p class="setting-title">Đơn Hàng Của Tôi</p>

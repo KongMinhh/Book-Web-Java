@@ -1,3 +1,8 @@
+<%@page import="com.entity.Book_Order"%>
+<%@page import="java.util.List"%>
+<%@page import="com.DB.DBConnect"%>
+<%@page import="com.entity.User"%>
+<%@page import="com.DAO.BookOrderImpl"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -10,6 +15,9 @@
 <%@include file="all_component/allCss.jsp"%>
 </head>
 <body>
+	<c:if test="${empty userobj}">
+		<c:redirect url="login.jsp"></c:redirect>
+	</c:if>
 	<!-- * * * * * * Header Search * * * * * *  -->
 	<header class="header">
 		<div class="container">
@@ -121,7 +129,8 @@
 	<main>
 	<section class="order-book">
 		<div class="container">
-		<h1 class="section-heading section-gardient add__heading" style="margin-top: 20px">Đơn Hàng Của Bạn</h1>
+			<h1 class="section-heading section-gardient add__heading"
+				style="margin-top: 20px">Đơn Hàng Của Bạn</h1>
 			<table class="table-all-book table-orders-book">
 				<thead>
 					<tr>
@@ -134,33 +143,30 @@
 					</tr>
 				</thead>
 				<tbody>
+
+					<%
+						User u = (User) session.getAttribute("userobj");
+						BookOrderImpl dao = new BookOrderImpl(DBConnect.getConn());
+						List<Book_Order> blist = dao.getBook(u.getEmail());
+						for (Book_Order b : blist) {
+					%>
 					<!-- Row 1 -->
 					<tr>
-						<th>1</th>
-						<td>Đắc Nhân Tâm</td>
-						<td>Dale Carnegie</td>
-						<td>41.600</td>
-						<td>New</td>
-						<td>Còn Hàng</td>
+						<th><%=b.getOrderId()%></th>
+						<td><%=b.getUserName()%></td>
+						<td><%=b.getBookName()%></td>
+						<td><%=b.getAuthor()%></td>
+						<td><%=b.getPrice()%></td>
+						<td><%=b.getPaymentType()%></td>
 					</tr>
-					<!-- Row 2-->
-					<tr>
-						<th>2</th>
-						<td>Đắc Nhân Tâm</td>
-						<td>Dale Carnegie</td>
-						<td>41.600</td>
-						<td>New</td>
-						<td>Còn Hàng</td>
-					</tr>
-					<!-- Row 3 -->
-					<tr>
-						<th>3</th>
-						<td>Đắc Nhân Tâm</td>
-						<td>Dale Carnegie</td>
-						<td>41.600</td>
-						<td>New</td>
-						<td>Còn Hàng</td>
-					</tr>
+
+					<%
+						}
+					%>
+
+
+
+
 				</tbody>
 			</table>
 		</div>
