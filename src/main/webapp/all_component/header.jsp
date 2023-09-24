@@ -17,9 +17,9 @@
             </svg> <span class="header__sologan">BOOKFAIR</span>
 			</a>
 			<!-- Search form -->
-			<form action="" class="header__search-form">
+			<form action="search.jsp" method="post" class="header__search-form">
 				<input type="text" class="header__search-input"
-					placeholder="Tìm kiếm sách mong muốn... " />
+					placeholder="Tìm kiếm sách mong muốn... " name="ch"/>
 				<!-- Button submit -->
 				<button type="submit" class="btn header__btn-search">
 					<i class="fa-regular fa-magnifying-glass"></i>

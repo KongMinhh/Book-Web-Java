@@ -72,7 +72,7 @@ public class UserDAOImpl implements UserDAO {
 		return us;
 	}
 
-	public boolean checkPassword(int id,String ps) {
+	public boolean checkPassword(int id, String ps) {
 
 		boolean f = false;
 		try {
@@ -101,7 +101,7 @@ public class UserDAOImpl implements UserDAO {
 			ps.setString(1, us.getName());
 			ps.setString(2, us.getEmail());
 			ps.setString(3, us.getPhone());
-			ps.setInt(4,us.getId());
+			ps.setInt(4, us.getId());
 
 			int i = ps.executeUpdate();
 			if (i == 1) {
@@ -113,5 +113,22 @@ public class UserDAOImpl implements UserDAO {
 
 		return f;
 	}
-	
+
+	public boolean checkUser(String em) {
+		boolean f = true;
+		try {
+			String sql = "select * from user where email=?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, em);
+			ResultSet rs=ps.executeQuery();
+			while(rs.next()) {
+				f=false;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return f;
+	}
+
 }

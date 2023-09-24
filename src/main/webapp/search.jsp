@@ -1,4 +1,3 @@
-<%@page import="com.entity.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
@@ -15,16 +14,15 @@
 <body>
 	<!-- * * * Header * * * -->
 	<%@include file="all_component/header.jsp"%>
-	<%
-		User u = (User) session.getAttribute("userobj");
-	%>
+
 	<section class="book-recent">
 		<div class="container book-inner">
 			<h2 class="section-heading section-gardient">SÁCH GẦN ĐÂY</h2>
 			<div class="row row-cols-lg-5 row-cols-md-2 row-cols-sm-1">
 				<%
+					String ch=request.getParameter("ch");
 					BookDAOImpl dao2 = new BookDAOImpl(DBConnect.getConn());
-					List<BookDtls> list2 = dao2.getAllRecentBook();
+					List<BookDtls> list2 = dao2.getBookBySearch(ch);
 					for (BookDtls b : list2) {
 				%>
 				<!-- Item 1 -->
@@ -34,8 +32,7 @@
 							<a href="#!"> <img src="./book/<%=b.getPhotoName()%>"
 								alt="Book" />
 							</a>
-							<a href="./view_books.jsp?bid=<%=b.getBookId()%>"
-								class="btn btn-gray btn-md btn-more">Xem Thêm</a>
+							<a href="./view_books.jsp" class="btn btn-gray btn-md btn-more">Xem Thêm</a>
 							<%
 								if (b.getBookCategory().equals("Old")) {
 							%>
@@ -60,23 +57,9 @@
 								<i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>
 								<i class="fa-solid fa-star"></i>
 							</div>
-							<%
-								if (u == null) {
-							%>
-							<a href="./login.jsp"
-								class="btn btn-outline-primary btn-sm btn-book"> <i
-								class="fa-regular fa-basket-shopping"></i> Chọn mua
-							</a>
-							<%
-								} else {
-							%>
-							<a href="cart?bid=<%=b.getBookId()%>&&uid=<%=u.getId()%>"
-								class="btn btn-outline-primary btn-sm btn-book"> <i
-								class="fa-regular fa-basket-shopping"></i> Chọn mua
-							</a>
-							<%
-								}
-							%>
+							<button class="btn btn-outline-primary btn-sm btn-book">
+								<i class="fa-regular fa-basket-shopping"></i> Chọn mua
+							</button>
 						</div>
 					</article>
 				</div>

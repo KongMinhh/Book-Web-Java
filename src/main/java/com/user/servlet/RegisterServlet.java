@@ -44,17 +44,29 @@ public class RegisterServlet extends HttpServlet {
 			if(check!=null)
 			{
 				UserDAOImpl dao=new UserDAOImpl(DBConnect.getConn());
-				boolean f=dao.userRegister(us);
-				if(f)
-				{
-					/*System.out.println("Đăng ký thành công !");*/
-					session.setAttribute("succMsg", "Đăng ký thành công !");
-					resp.sendRedirect("register.jsp");
+				
+				boolean f2=dao.checkUser(email);
+				if(f2) {
+					
+					boolean f=dao.userRegister(us);
+					if(f)
+					{
+						/*System.out.println("Đăng ký thành công !");*/
+						session.setAttribute("succMsg", "Đăng ký thành công !");
+						resp.sendRedirect("register.jsp");
+					}else {
+						/*System.out.println("Đăng ký thất bại !");*/
+						session.setAttribute("failedMsg", "Đăng ký thất bại !");
+						resp.sendRedirect("register.jsp");
+					}
+					
+					
+					
 				}else {
-					/*System.out.println("Đăng ký thất bại !");*/
-					session.setAttribute("failedMsg", "Đăng ký thất bại !");
+					session.setAttribute("failedMsg", "Người Dùng Tôn Tại !");
 					resp.sendRedirect("register.jsp");
 				}
+			
 			}else {
 				/*System.out.println("Xin vui lòng đồng ý điều kiên và bảo mật !");*/
 				session.setAttribute("failedMsg", "Xin vui lòng đồng ý điều khoản và bảo mật !");
