@@ -12,8 +12,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Card Page</title>
-</head>
 <%@include file="all_component/allCss.jsp"%>
+</head>
 <body>
 	<c:if test="${empty userobj}">
 		<c:redirect url="login.jsp"></c:redirect>
@@ -279,9 +279,9 @@
 			</div>
 		</div>
 	</section>
-	<!-- * * * * Footer * * * --> <%@include
-		file="all_component/footer.jsp"%> </main>
-
+	</main>
+	<!-- * * * * Footer * * * -->
+	<%@include file="all_component/footer.jsp"%>
 
 </body>
 </html>

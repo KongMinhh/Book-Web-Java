@@ -76,9 +76,10 @@ public class OrderServlet extends HttpServlet {
 			} else {
 				boolean f = dao2.saveOrder(orderList);
 				if (f) {
-					System.out.println("order success");
+					resp.sendRedirect("order_success.jsp");
 				} else {
-					System.out.println("order failed");
+					session.setAttribute("failedMsg", " Lỗi Đơn Hàng Chưa Đặt Thành Công !");
+					resp.sendRedirect("checkout.jsp");
 				}
 
 			}
