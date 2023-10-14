@@ -22,6 +22,8 @@ public class DeleteOldBook extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		resp.setContentType("text/html; charset=UTF-8");
+		req.setCharacterEncoding("UTF-8");
 		try {
 			String em = req.getParameter("em");
 			int id=Integer.parseInt(req.getParameter("id"));

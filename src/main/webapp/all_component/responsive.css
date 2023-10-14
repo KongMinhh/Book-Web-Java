@@ -1,0 +1,102 @@
+/* PC Low  */
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+	.hero-cate-table {
+		display: grid;
+	    grid-template-columns: repeat(4, 1fr);
+	    grid-template-rows: repeat(2, 1fr);
+    }
+	
+}
+
+/* * * * * * * PC * * * * * * */
+@media screen and (min-width: 992px) {
+	
+}
+/* * * * * * * Tablet & Mobile * * * * * * */
+@media screen and (max-width: 991.98px) {
+	/* Header */
+	.header__inner {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		row-gap: 5px;
+	
+	}
+	.header {
+		background: var(--primary-color);
+	}
+	.header__logo {
+		grid-column: 1 / 4;
+	}
+	.header__icon,
+	.header__label,
+	header .header__logo svg path, 
+	header .header__sologan {
+		color: var(--white-color);
+		fill: var(--white-color);
+		
+	}
+	.header__search-input  {
+		width: 350px;	
+	}
+	.header__inner:has(.header__search-input:not(:placeholder-shown))
+  	.header__search-form {
+ 	 background-color: var(--white-color);
+	}
+	.header__search-form {
+		background: var(--white-color);
+	}
+	.hero__left {
+		width: 100%;
+	}
+	.slick-prev, 
+	.slick-next {
+		display: none !important;
+	}
+	
+	.hero__right,
+	.header__notification,
+	.header-menu {
+		display: none;
+	
+	}
+	/* Hero */
+	.hero-cate-table {
+		display: grid;
+	    grid-template-columns: repeat(4, 1fr);
+	    grid-template-rows: repeat(2, 1fr);
+    }
+    
+    /* Cart View  */
+    .cart-view .row > [class*="col-"]:last-child .cart-view__wrap  {
+    	margin-top: 30px;
+    }
+	/* Footer */
+	footer .row > [class*="col-"]:last-child {
+		margin-top: 20px;
+	}
+	.footer__delivery {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(120px, 1fr));
+		grid-template-rows: repeat(4, 1fr);
+	}
+	.footer__column {
+		border-right: unset;
+	}
+	/* Login  */
+	.register {
+		background: var(--white-color);
+		grid-template-columns: unset;
+	}
+	.register__media {
+		display: none;
+	}
+	.register-form {
+		margin: auto;
+		border-radius: unset;
+	}
+}
+/* * * * * * * Tablet  * * * * * * */
+@media screen and (min-width: 768px) and (max-width: 991.98px) {}
+/* * * * * * * Mobile * * * * * * */
+@media screen and (max-width: 767.98px) {}

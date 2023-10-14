@@ -121,7 +121,7 @@
 	<section class="user-edit bg-white" style="padding: 60px 0">
 		<div class="container">
 			<div class="row">
-				<div class="add-book__inner col-lg-7 offset-lg-3">
+				<div class="add-book__inner col-lg-7 offset-lg-3 col-12">
 					<h1 class="section-heading section-gardient add__heading">Thêm
 						Địa Chỉ</h1>
 					<form action="" autocomplete="off">

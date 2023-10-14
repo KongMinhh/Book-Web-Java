@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="footer__inner">
 			<div class="row">
-				<div class="col-lg-4">
+				<div class="col-lg-4 col-12">
 					<section class="footer__column">
 						<!-- Logo -->
 						<a href="#!" class="footer__logo"> <svg width="53" height="53"
@@ -50,10 +50,10 @@
 						</div>
 					</section>
 				</div>
-				<div class="col-lg-8">
+				<div class="col-lg-8 col-12">
 					<div class="row">
 						<!-- Item 1 -->
-						<div class="col-lg-4">
+						<div class="col-lg-4 col-6">
 							<article class="footer__wrapp">
 								<h3 class="footer__title">DỊCH VỤ</h3>
 								<ul class="footer__list">
@@ -71,7 +71,7 @@
 							</article>
 						</div>
 						<!-- Item 2 -->
-						<div class="col-lg-4">
+						<div class="col-lg-4 col-6">
 							<article class="footer__wrapp">
 								<h3 class="footer__title">HỖ TRỢ</h3>
 								<ul class="footer__list">
@@ -89,7 +89,7 @@
 							</article>
 						</div>
 						<!-- Item 3 -->
-						<div class="col-lg-4">
+						<div class="col-lg-4 col-12">
 							<article class="footer__wrapp">
 								<h3 class="footer__title">TÀI KHOẢN CỦA TÔI</h3>
 								<ul class="footer__list">

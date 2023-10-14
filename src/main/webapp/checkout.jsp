@@ -131,7 +131,7 @@
 	<section class="cart-view">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6">
+				<div class="col-lg-6 col-12">
 					<div class="cart-view__wrap">
 						<h1 class="section-heading">Sản Phẩm Bạn Đã Chọn</h1>
 						<div class="cart-view__inner">
@@ -192,7 +192,7 @@
 					</div>
 				</div>
 
-				<div class="col-lg-6">
+				<div class="col-lg-6 col-12">
 					<div class="cart-view__wrap">
 						<div class="cart-view__order">
 							<h1 class="section-heading">Chi Tiết Đơn Đặt Hàng</h1>

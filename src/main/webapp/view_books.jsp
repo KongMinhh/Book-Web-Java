@@ -104,14 +104,14 @@
 		<div class="container book-inner">
 			<div class="row">
 				<!-- View Media -->
-				<div class="col col-lg-5">
+				<div class="col col-lg-5 col-12">
 					<figure class="view-book__media">
 						<img class="view-book__img" src="./book/<%=b.getPhotoName()%>"
 							alt="Book" />
 					</figure>
 				</div>
 				<!-- View Product -->
-				<div class="col col-lg-7">
+				<div class="col col-lg-7 col-12">
 					<section class="view-book__content">
 						<h1 class="view-book__heading">
 							Tên Sách: <span class="view-book__sub"><%=b.getBookName()%></span>

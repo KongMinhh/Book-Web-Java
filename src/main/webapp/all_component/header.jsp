@@ -140,25 +140,25 @@
 	<div class="container">
 		<div class="row">
 			<!-- Item 1 -->
-			<div class="col-lg-3">
+			<div class="col-lg-3 col-6">
 				<a href="#!" class="hero-product__img"> <img
 					src="./img/banner-product-01.png" alt="hero-img" />
 				</a>
 			</div>
 			<!-- Item 2 -->
-			<div class="col-lg-3">
+			<div class="col-lg-3 col-6">
 				<a href="#!" class="hero-product__img"> <img
 					src="./img/banner-product-02.png" alt="hero-img" />
 				</a>
 			</div>
 			<!-- Item 3 -->
-			<div class="col-lg-3">
+			<div class="col-lg-3 col-6">
 				<a href="#!" class="hero-product__img"> <img
 					src="./img/banner-product-03.png" alt="hero-img" />
 				</a>
 			</div>
 			<!-- Item 4 -->
-			<div class="col-lg-3">
+			<div class="col-lg-3 col-6">
 				<a href="#!" class="hero-product__img"> <img
 					src="./img/banner-product-04.png" alt="hero-img" />
 				</a>
@@ -169,7 +169,7 @@
 <!-- * * * * * * * Hero cate * * * * * * *  -->
 <section class="hero-cate">
 	<div class="container">
-		<div class="row row-cols-8">
+		<div class="row hero-cate-table">
 			<!-- Item 1 -->
 			<div class="col hero-cate__item">
 				<a href="#!" class="hero-cate__img"> <img

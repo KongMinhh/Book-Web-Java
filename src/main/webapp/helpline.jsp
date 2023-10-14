@@ -121,7 +121,7 @@
 	<section class="helpline">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6 offset-lg-3">
+				<div class="col-lg-6 offset-lg-3 col-12">
 					<div class="helpline__inner">
 						<i class="fa-solid fa-message-bot"></i>
 						<h2 class="helpline__service">Hỗ Trợ 24/7</h2>

@@ -23,7 +23,8 @@ public class RegisterServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+		resp.setContentType("text/html; charset=UTF-8");
+		req.setCharacterEncoding("UTF-8");
 		try {
 			String name=req.getParameter("fname");
 			String email=req.getParameter("email");
@@ -59,11 +60,9 @@ public class RegisterServlet extends HttpServlet {
 						session.setAttribute("failedMsg", "Đăng ký thất bại !");
 						resp.sendRedirect("register.jsp");
 					}
-					
-					
-					
+						
 				}else {
-					session.setAttribute("failedMsg", "Người Dùng Tôn Tại !");
+					session.setAttribute("failedMsg", "Người Dùng Đã Tồn Tại !");
 					resp.sendRedirect("register.jsp");
 				}
 			

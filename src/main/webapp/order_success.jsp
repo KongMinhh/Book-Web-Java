@@ -120,7 +120,7 @@
 	<section class="confirmed">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6 offset-lg-3">
+				<div class="col-lg-6 offset-lg-3 col-12">
 					<div class="confirmed__inner">
 						<i class="fa-solid fa-circle-check"></i>
 						<h1 class="confirmed__heading">Thank You !</h1>

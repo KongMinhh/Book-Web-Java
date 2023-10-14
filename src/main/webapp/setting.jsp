@@ -128,7 +128,7 @@
 			<!-- Row 1 -->
 			<div class="row">
 				<!-- Item 1 -->
-				<div class="col-lg-4">
+				<div class="col-4">
 					<a href="./sell_book.jsp">
 						<article class="setting-item">
 							<i class="fa-solid fa-books"></i>
@@ -137,7 +137,7 @@
 					</a>
 				</div>
 				<!-- Item 2 -->
-				<div class="col-lg-4">
+				<div class="col-4">
 					<a href="./old_book.jsp">
 						<article class="setting-item">
 							<i class="fa-solid fa-address-card"></i>
@@ -146,7 +146,7 @@
 					</a>
 				</div>
 					<!-- Item 3 -->
-				<div class="col-lg-4">
+				<div class="col-4">
 					<a href="./edit_profile.jsp">
 						<article class="setting-item">
 							<i class="fa-solid fa-address-card"></i>
@@ -158,7 +158,7 @@
 			<!-- Row 2 -->
 			<div class="row mt-2">
 				<!-- Item 4 -->
-				<div class="col-lg-6">
+				<div class="col-6">
 					<a href="./order.jsp">
 						<article class="setting-item">
 							<i class="fa-solid fa-ballot-check"></i>
@@ -167,7 +167,7 @@
 					</a>
 				</div>
 				<!-- Item 5 -->
-				<div class="col-lg-6">
+				<div class="col-6">
 					<a href="./helpline.jsp">
 						<article class="setting-item">
 							<i class="fa-solid fa-square-question"></i>

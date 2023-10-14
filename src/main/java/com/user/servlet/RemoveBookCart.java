@@ -22,6 +22,8 @@ public class RemoveBookCart extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		resp.setContentType("text/html; charset=UTF-8");
+		req.setCharacterEncoding("UTF-8");
 		int bid=Integer.parseInt(req.getParameter("bid"));
 		int uid=Integer.parseInt(req.getParameter("uid"));
 		int cid=Integer.parseInt(req.getParameter("cid"));

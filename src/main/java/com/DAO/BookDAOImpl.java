@@ -393,7 +393,10 @@ public class BookDAOImpl implements BookDAO {
 		List<BookDtls> list = new ArrayList<BookDtls>();
 		BookDtls b = null;
 		try {
-			String sql = "select * from book_dtls where bookname like ? or author like ? or bookCategory like ? and status=?";
+// 		String sql = "select * from book_dtls where bookname like ? or author like ? or bookCategory like ? and status=?";
+			String sql = "SELECT * FROM book_dtls WHERE bookname COLLATE utf8_general_ci LIKE ? OR author COLLATE utf8_general_ci LIKE ? OR bookCategory COLLATE utf8_general_ci LIKE ? AND status = ?";
+
+
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, "%" + ch + "%");
 			ps.setString(2, "%" + ch + "%");

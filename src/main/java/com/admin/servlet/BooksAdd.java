@@ -27,7 +27,8 @@ public class BooksAdd extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+		resp.setContentType("text/html; charset=UTF-8");
+		req.setCharacterEncoding("UTF-8");
 		try {
 
 			String bookName = req.getParameter("name-book");

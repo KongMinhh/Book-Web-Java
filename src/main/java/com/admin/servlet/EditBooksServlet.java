@@ -18,6 +18,8 @@ public class EditBooksServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		resp.setContentType("text/html; charset=UTF-8");
+		req.setCharacterEncoding("UTF-8");
 		try {
 			int id=Integer.parseInt(req.getParameter("id"));
 			String bookName = req.getParameter("name-book");

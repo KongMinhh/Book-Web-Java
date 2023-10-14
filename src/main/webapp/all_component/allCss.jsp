@@ -73,3 +73,5 @@
 
 <!-- * * * * * STYLE CSS * * * * * -->
 <link rel="stylesheet" type="text/css" href="./all_component/styles.css">
+<!-- * * * * * STYLE CSS * * * * * -->
+<link rel="stylesheet" type="text/css" href="./all_component/responsive.css">
