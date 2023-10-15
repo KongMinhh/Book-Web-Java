@@ -28,6 +28,17 @@
 	<!-- * * * * Footer * * * -->
 	<%@include file="all_component/footer.jsp"%>
 
+	<!-- Home Poppup -->
+	<div class="home-popup-overlay">
+		<div class="home-popup-content ">
+			<figure class="home-popup-img">
+				<img alt="popuphome" src="./img/popuphome.png"">
+				<button class="popup-home-close">
+					<i class="fa-regular fa-xmark"></i>
+				</button>
+			</figure>
+		</div>
+	</div>
 
 	<!-- * * * * * SLICK SLIDER * * * * * -->
 	<script type="text/javascript"
@@ -36,7 +47,7 @@
 		src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript"
 		src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-	<script type="text/javascript">
+	<script defer type="text/javascript">
 		$(document)
 				.ready(
 						function() {
@@ -60,5 +71,67 @@
 							});
 						});
 	</script>
+	<!-- Home Popup -->
+	<script defer="defer" type="text/javascript">
+		window
+				.addEventListener(
+						"load",
+						function() {
+							document.documentElement.style.overflow = 'hidden';
+							setTimeout(
+									function() {
+										document
+												.querySelector(".home-popup-overlay").style.display = "flex";
+									}, 1000);
+						});
+		document
+				.querySelector(".popup-home-close")
+				.addEventListener(
+						"click",
+						function() {
+							document.querySelector(".home-popup-overlay").style.display = "none";
+							document.documentElement.style.overflow = 'auto';
+						});
+	</script>
+
+	<script type="text/javascript">
+	<!-- Start of Async Drift Code -->
+		<script>
+		"use strict";
+
+		!function() {
+			var t = window.driftt = window.drift = window.driftt || [];
+			if (!t.init) {
+				if (t.invoked)
+					return void (window.console && console.error && console
+							.error("Drift snippet included twice."));
+						t.invoked = !0,
+						t.methods = [ "identify", "config", "track", "reset",
+								"debug", "show", "ping", "page", "hide", "off",
+								"on" ],
+						t.factory = function(e) {
+							return function() {
+								var n = Array.prototype.slice.call(arguments);
+								return n.unshift(e), t.push(n), t;
+							};
+						},
+						t.methods.forEach(function(e) {
+							t[e] = t.factory(e);
+						}),
+						t.load = function(t) {
+							var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document
+									.createElement("script");
+							o.type = "text/javascript", o.async = !0,
+									o.crossorigin = "anonymous",
+									o.src = "https://js.driftt.com/include/"
+											+ n + "/" + t + ".js";
+							var i = document.getElementsByTagName("script")[0];
+							i.parentNode.insertBefore(o, i);
+						};
+			}
+		}();
+		drift.SNIPPET_VERSION = '0.3.1';
+		drift.load('huhx68zwe26h');
+
 </body>
 </html>
